@@ -29,7 +29,7 @@ void app_main()
 {
   gpio_config_t io_conf;
 
-  io_conf.intr_type = GPIO_PIN_INTR_DISABLE;
+  io_conf.intr_type = GPIO_INTR_DISABLE;
   io_conf.mode = GPIO_MODE_OUTPUT;
   io_conf.pin_bit_mask = GPIO_OUTPUT_PIN_SEL;
   io_conf.pull_down_en = 0;
@@ -75,6 +75,6 @@ void app_main()
   }
 
   printf("Value in decimal %d\n", value);
-  vTaskDelay(1000 / portTICK_RATE_MS);
+  vTaskDelay(1000 / portTICK_PERIOD_MS);
   }
 }
